@@ -43,10 +43,9 @@
   changed = yellow
   untracked = cyan
 [user]
-  name = Will Mayner
-  email = wmayner@gmail.com
+  name = Graham Finlday
+  email = graham.b.findlay@gmail.com
 [core]
-  excludesfile = /Users/will/.gitignore
   autocrlf = input
 [credential]
   helper = osxkeychain
