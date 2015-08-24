@@ -23,13 +23,18 @@ Install
   * [oh-my-zsh][2]
   * [Powerline][4]
 
-4. In the `.zshrc`, set `DOTFILES=~/path/to/this/repo>`. I just use `~/dotfiles`.
+4. In the `.zshrc`, set `DOTFILES=~/path/to/this/repo>`. I just use `~/dotfiles`. It doesn't matter too much where you put this line, as long as it's before the `$DOTFILES` variable is referenced, obviously. 
 
 Then you should be all set. Some files you'll want to personalize right away:
 
 - `zsh/zshrc.symlink` and `globalenv.symlink`: set up your own path variables
 - `aliases.symlink`: create your own aliases
 - `git/gitconfig.symlink`: commit as yourself
+
+5. Pitfalls to watch out for...
+  * On Ubuntu and other Linux distributions (unlike on OS X), you usually use the default installation of pytho, which lives at `/usr/bin/python`. You might need to symlink `/usr/local/bin/python` to this location. 
+  * In Ubuntu 14.04, you need to log out of your desktop session (NOT just your terminal session) before a `chsh` to `zsh` will take effect. 
+  * I recommend using the `vim-gnome` package for your vim, so that you don't have to go through the hassle of building vim with lua yourself.
 
 
 Components
