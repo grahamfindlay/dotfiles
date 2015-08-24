@@ -76,7 +76,7 @@ source "/usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.
 for config_file ($DOTFILES/**/*.zsh) source $config_file
 
 # Use vi to edit command line
-bindkey -v
+# bindkey -v
 
 # Remove delay in entering command mode, as described by
 # http://zsh.sourceforge.net/Guide/zshguide04.html:
