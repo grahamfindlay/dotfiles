@@ -22,6 +22,7 @@ Install
   * [spf13-vim][1]
   * [oh-my-zsh][2]
   * [Powerline][4]
+    * The Powerline fonts on Ubuntu can be installed by following these directions: https://powerline.readthedocs.org/en/latest/installation/linux.html
 
 3. In the `.zshrc`, set `DOTFILES=~/path/to/this/repo>`. I just use `~/dotfiles`.
 
