@@ -30,6 +30,11 @@ Then you should be all set. Some files you'll want to personalize right away:
 - `zsh/zshrc.symlink` and `globalenv.symlink`: set up your own path variables
 - `aliases.symlink`: create your own aliases
 - `git/gitconfig.symlink`: commit as yourself
+- 
+
+4. You might want a solarized shell theme...
+  * https://github.com/seebi/dircolors-solarized.git
+  * https://github.com/Anthony25/gnome-terminal-colors-solarized
 
 **Pitfalls to watch out for...**
   * On Ubuntu and other Linux distributions (unlike on OS X), you usually use the default installation of pytho, which lives at `/usr/bin/python`. You might need to symlink `/usr/local/bin/python` to this location. 
