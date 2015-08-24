@@ -23,7 +23,7 @@ Install
   * [oh-my-zsh][2]
   * [Powerline][4]
 
-4. In the `.zshrc`, set `DOTFILES=~/path/to/this/repo>`. I just use `~/dotfiles`.
+4. In the `.zshrc`, set `DOTFILES=~/path/to/this/repo>`. I just use `~/dotfiles`. It doesn't matter too much where you put this line, as long as it's before the `$DOTFILES` variable is referenced, obviously. 
 
 Then you should be all set. Some files you'll want to personalize right away:
 
