@@ -31,6 +31,8 @@ Then you should be all set. Some files you'll want to personalize right away:
 - `aliases.symlink`: create your own aliases
 - `git/gitconfig.symlink`: commit as yourself
 
+5. You probably want to install Slate for window management, and Seil for remapping Esc to capslock. 
+
 
 Components
 ----------
