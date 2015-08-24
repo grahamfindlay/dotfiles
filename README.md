@@ -56,16 +56,6 @@ install`. This is so you can keep everything versioned in the repo.
 
 * Aliases are defined in `aliases.symlink`.
 
-* I use iTerm2 rather than the native OSX terminal; it's more customizable:
-
-  - The colorscheme is Solarized, the same one used in Vim by spf13. See the
-    link for details on how to set it up for iTerm2.
-  - In order for the `zsh` prompt to render properly, you need to set up your
-    terminal to use a powerline-enabled font. Install one of the fonts from
-    [here](https://github.com/Lokaltog/powerline-fonts) and then set it as the
-    font in `iTerm2 > Preferences > Profiles > Text`.
-    There's a few special files in the hierarchy.
-
 ### Vim ###
 
 - **spf13**:
