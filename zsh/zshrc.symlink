@@ -1,6 +1,9 @@
 # Source environment variables immediately
 source ~/.globalenv
 
+# Path to your dotfiles
+DOTFILES=~/dotfiles
+
 # Path to your oh-my-zsh configuration
 ZSH=$HOME/.oh-my-zsh
 
@@ -78,7 +81,7 @@ for config_file ($DOTFILES/**/*.zsh) source $config_file
 source "/usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh"
 
 # Use vi to edit command line
-bindkey -v
+# bindkey -v
 
 # Remove delay in entering command mode, as described by
 # http://zsh.sourceforge.net/Guide/zshguide04.html:
