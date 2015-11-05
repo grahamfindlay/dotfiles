@@ -1,3 +1,0 @@
-#!/bin/sh
-
-echo `du -ch $1 | grep total`
