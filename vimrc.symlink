@@ -1,0 +1,149 @@
+" Based on http://dougblack.io/words/a-good-vimrc.html
+
+" Modeline {{
+" vim: set foldmarker={{,}} foldlevel=0 foldmethod=marker :
+"
+"   The above line is NOT an ordinary comment. It is a modeline.  
+"   Vim searches for special comments which start with 'vim:'
+"   These comments are called 'modelines'.
+"   Modelines indicate settings used only for the current file. 
+"   This modeline tells vim to fold sections inside curly braces. 
+"   'foldmarker' tells vim to use the braces, 'foldlevel=0' tells vim
+"     to fold every single bracket pair which contains at least 0 lines. 
+"   'foldmethod' tells vim to fold based on characters, and not indents. 
+" }}
+
+" Quick Tips {{
+  " nnoremap = remap how keys function in normal mode
+  " inoremap = remap how keys function in insert mode
+" }}
+
+" Pathogen (Plugin manager) {{ 
+  " points vim to pathogen. must remain 1st line
+  runtime bundle/vim-pathogen/autoload/pathogen.vim
+
+  " activate pathogen
+  execute pathogen#infect()
+" }}
+
+" General {{
+
+  " remap <Esc> to jj in case you're on a system where you can't quickly remap capslock  
+  inoremap jj <Esc>
+  " automatically lead file if it has changed externally
+  set autoread
+  " avoid the extra shift keypress to enter cmdline mode
+  noremap ; :
+" }}
+
+" Colors {{
+  syntax enable " enable syntax highlighting
+  set background=dark " set background to dark
+  colorscheme solarized " use solarized colors. requires plugin
+" }}
+
+" Tabs & Spaces {{
+  set tabstop=2 " number of visual spaces per TAB
+  set softtabstop=2 " number of spaces in tab when editing
+  set expandtab " turns tabs into spaces
+  set shiftwidth=2 " number of spaces indended in visual mode
+  set smartindent
+" }}
+
+" UI {{
+  set number " show line number
+  set showcmd " show last command in bottom bar
+  set cursorline " highlight current line
+  set cursorcolumn " highlight current column
+  filetype indent on "load filetype-specific indent files from .vim/indent
+  set wildmenu " visual autocomplete for command menu
+  set lazyredraw " don't redraw during macros
+  set showmatch " highlight matching brackets
+  set colorcolumn=80 " highlights column 80
+" }}
+
+" Searching {{
+  set ignorecase " ignore case when searching
+  set incsearch " search as characters are entered
+  set hlsearch " highlight search matches
+  " nnoremap <leader><space> :nohlsearch<CR> clear search highlights
+  set wrapscan " searches wrap around at the end of the file
+" }}
+
+" Folding {{ 
+  set foldenable " enable folding
+  set foldlevelstart=10 "0: all fold closed, 99: all open
+  " set foldnestmax=10 you should never need this
+  " space expands/collapses folds
+  noremap <space> za
+  set foldmethod=indent " fold indented blocks 
+" }}
+
+" Movement {{ 
+  " H moves to begging of line. Nothing uses H. ^ is hard to reach. 
+  nnoremap H <Home>
+  " move vertically by visual line, not actual line. 
+  " this stops you from skipping over long, wrapped lines. 
+  nnoremap j gj
+  nnoremap k gk
+" }}
+
+" Leader Shortcuts {{ 
+  " <Leader> is a user defined meta key. Map to spacebar. Profit.  
+  let mapleader = "\<Space>"
+  " Vim models undos as a tree, not stack. Powerful but unintuitive. 
+  " Gundo is a (g)raphical (undo) plugin for working with the tree.  
+  " This key enters/exits gundo mode.  
+  nnoremap <leader>u :GundoToggle<CR>
+  " Yank to the OS X clipload. Use to copy/paste from VIM to other apps. 
+  " <leader>y yanks selected text, leader<yy> yanks line. 
+  noremap <leader>y "*y
+  noremap <leader>yy "*Y
+  " Paste from OS X clipboard into vim, preserving text formatting
+  " Notice how this command has 3 parts and part 3 undoes part 1.
+  noremap <leader>p :set paste<CR>:put *<CR>:set nopaste<CR>
+" }}
+
+" Lightline (status line plugin) {{
+set laststatus=2 " Lightline can only hook into vim when a buffer is split, so pretend that every buffer has been split. 
+" Customize status bar. Components are defined, then placed on the bar. 
+" Fugitive is a vim plugin that provides git integration. 
+let g:lightline = {
+\   'colorscheme': 'solarized',
+\   'component': { 
+\     'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+\   },
+\   'active': {
+\     'left': [ ['mode', 'paste'], ['readonly', 'filename', 'modified'] ],
+\     'right': [ ['fugitive'], ['line', 'column'] ]
+\   } 
+\ }
+" }}
+
+" Syntastic (syntax checking plugin) {{
+  "Make the warning messages printed to the status line more informative. 
+  set statusline+=%#warningmsg#
+  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%*
+
+  " Always update each pane's location list with found errors
+  let g:syntastic_always_populate_loc_list = 1
+  " Open/close error column on left side automatically and intelligently
+  let g:syntastic_auto_loc_list = 1
+  " Check for syntax errors on file load. 
+  let g:syntastic_check_on_open = 1
+  " Don't bother checking for syntax errors on :wq 
+  let g:syntastic_check_on_wq = 0
+
+" }}
+
+" TODOS {{ 
+  " Investigate stripping trailing whitespace
+  " Investivate Ag https://github.com/rking/ag.vim.git
+  " Investigate CtrlP with or without Ag integration. 
+  " Investigate how backup/swap files work, and avoiding them. 
+  " Investigate shiftround and autoindent. 
+  " Investigate scrollbind
+  " Investigate nerdtree-git-plugin
+  " Investigate vim-gist
+" }}

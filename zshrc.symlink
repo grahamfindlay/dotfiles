@@ -1,3 +1,9 @@
+# Modeline {{
+# vim: set foldmarker={{,}} foldlevel=0 foldmethod=marker :
+# }}
+
+# Oh-My-Zsh Auto-generated template {{
+
 # This is a template .zshrc generated automatically by Oh-My-Zsh. 
 # For personal additions, see below. 
 
@@ -8,7 +14,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -33,7 +39,7 @@ ZSH_THEME="robbyrussell"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -52,7 +58,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git fasd)
 
 # User configuration
 
@@ -86,14 +92,54 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-##### Personal additions #####
-export EDITOR="vim"
-# allow editing of command line with vim
-bindkey -v 
+# }}
 
-# vi style incremental search
-bindkey '^R' history-incremental-search-backward
-bindkey '^S' history-incremental-search-forward
-bindkey '^P' history-search-backward
-bindkey '^N' history-search-forward 
+# Personal additions {{
 
+# Vim {{
+  export EDITOR="vim"
+  # allow editing of command line with vim
+  bindkey -v 
+
+  # vi style incremental search
+  bindkey '^R' history-incremental-search-backward
+  bindkey '^S' history-incremental-search-forward
+  bindkey '^P' history-search-backward
+  bindkey '^N' history-search-forward 
+
+  # 0.1 second delay when switching into cmd mode, rather than default 0.4
+  export KEYTIMEOUT=10
+# }}
+
+# Oh-My-Zsh # {{
+  # removes need for explicit 'cd', ex: 'cd foo' becomes 'foo'
+  setopt AUTO_CD
+# }}
+
+# Aliases {{
+  alias h="history"
+  alias gs="git status --short"
+  alias j='fasd_cd -d' # autojump-style cd
+  # prettify ag output and highlight found matches
+  alias ag='ag --color-line-number 34 --color-match 36 --color-path 32'
+# }}  
+
+# Command Prompt {{
+  # Not placed in a theme file for easier setup on new systems.
+  # For explanation, see:
+  # http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/
+  # http://dougblack.io/words/zsh-vi-mode.html
+  # The binding functions that they suggest are not necessary since we are not using a theme. Zsh will check here for these hooks all by itself. 
+  RPROMPT="$(git_prompt_info)"
+  function zle-line-init zle-keymap-select {
+      NORMAL_MODE=%{$fg[cyan]%}[N]%{$reset_color%}
+      INSERT_MODE=%{$fg[green]%}[I]%{$reset_color%}
+      CURR_DIR=%{$fg[white]%}%c%{$reset_color%}
+      PROMPT="${${KEYMAP/vicmd/$NORMAL_MODE}/(main|viins)/$INSERT_MODE} $CURR_DIR "
+      zle reset-prompt
+  }
+  zle -N zle-line-init
+  zle -N zle-keymap-select
+# }}
+
+# }}

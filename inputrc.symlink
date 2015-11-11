@@ -1,0 +1,2 @@
+# if we are using bash v4.0 or higher, this will show vim mode in prompt
+set show-mode-in-prompt on

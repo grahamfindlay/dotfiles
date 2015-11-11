@@ -1,0 +1,45 @@
+[user]
+  name = Graham Findlay
+  email = graham.b.findlay@gmail.com
+[credential]
+  helper = osxkeychain
+[alias]
+  # Log versions
+  g = log --graph --pretty=oneline --abbrev-commit
+  gg = log --graph --pretty=format:'%Cred%d%Creset - %s - %C(yellow)%an%Creset %Cgreen%cr%Creset %Cblue%h%Creset' --date=relative --abbrev-commit
+  ggg = log --graph
+  l = log --pretty=format:'%C(yellow)%h%Creset - %Cblue%an%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  # Tree editing
+  unstage = reset HEAD --
+  undo = reset --soft HEAD^
+  nuke = reset --hard HEAD^
+  blast = reset --hard HEAD
+  amend = commit --amend -C HEAD
+  untrack = update-index --assume-unchanged
+  track = update-index --no-assume-unchanged
+  # Less verbose that status
+  s = status --short
+  # Save a repo as a tarball
+  export = archive -o latest.tar.gz -9 --prefix=latest/
+[color]
+  ui = true
+[color "branch"]
+  current = cyan
+  local = green
+  remote = yellow
+[color "diff"]
+  meta = cyan reverse
+  frag = reverse
+  old = red
+  new = green
+[color "status"]
+  added = green
+  changed = yellow
+  untracked = cyan
+[diff]
+  tool = vimdiff
+[push]
+  default = simple
+[core]
+  excludesfile = ~/.gitignore
+  autocrlf = input
