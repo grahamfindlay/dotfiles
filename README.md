@@ -7,22 +7,22 @@ The primary goal of these dotfiles is portability. That means a setup that "just
 Perform all steps in order: 
 
 1. Install Git
-  1. Clone this repo.
-2. Install iTerm
-  1. You want a monospaced, sans font. Use Monaco by default. 
-3. Install Homebrew
+2. Clone this repo.
+3. Install iTerm
+  * You want a monospaced, sans font. Use Monaco by default. 
+4. Install Homebrew
   * `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-4. Install Oh-My-Zsh (*Optional, but highly encouraged*) 
+5. Install Oh-My-Zsh (*Optional, but highly encouraged*) 
   * `sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
-5. Brew tmux
-6. Brew MacVim (mvim)
+6. Brew tmux
+7. Brew MacVim (mvim)
   * Think twice about clobbering someone else's system vim! 
   ```
   brew install macvim --with-override-system-vim
   brew linkapps macvim
   ```
   * Confirm success with: ``ls -la `which vim```. You should see it symlinked to the macvim Cellar. 
-7. Install dotfiles
+8. Install dotfiles
  * The install script will give you the option to backup any files it tries to clobber.
   ```
   cd path/to/this/repo
@@ -33,11 +33,11 @@ Perform all steps in order:
 Now, if you have time:
 
 1. Customize iTerm
-  1. If you want to get fancy, go for DejaVu Sans mono or Inconsolata. 
-  2. Preferences -> Keys -> set `option-t` to show/hide iTerm 
-  3. Install Solarized Colors for iTerm 2. 
+  * If you want to get fancy, go for DejaVu Sans mono or Inconsolata. 
+  * Preferences -> Keys -> set `option-t` to show/hide iTerm 
+  * Install Solarized Colors for iTerm 2. 
 2. Install Seil
-  1. Remaps Caps Lock to Escape (or Ctrl)
+  * Remaps Caps Lock to Escape (or Ctrl)
 3. Install Slate
 4. Install Ag
   * `brew install the_silver_searcher`
