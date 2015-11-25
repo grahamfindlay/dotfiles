@@ -1,0 +1,1 @@
+- Prune slate config
