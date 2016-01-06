@@ -22,6 +22,7 @@ Install
   * [spf13-vim][1]
   * [oh-my-zsh][2]
   * [Powerline][4]
+    * The Powerline fonts on Ubuntu can be installed by following these directions: https://powerline.readthedocs.org/en/latest/installation/linux.html
 
 3. In the `.zshrc`, set `DOTFILES=~/path/to/this/repo>`. I just use `~/dotfiles`.
 
@@ -30,10 +31,19 @@ Then you should be all set. Some files you'll want to personalize right away:
 - `zsh/zshrc.symlink` and `globalenv.symlink`: set up your own path variables
 - `aliases.symlink`: create your own aliases
 - `git/gitconfig.symlink`: commit as yourself
+- 
+
+4. You might want...
+  * A solarized shell theme...
+    * https://github.com/seebi/dircolors-solarized.git
+    * https://github.com/Anthony25/gnome-terminal-colors-solarized
+  * To swap ESC and CAPS LOCK
+    * Use 'gnome-tweak-tool' and check out the "Typing" tab. 
 
 **Pitfalls to watch out for...**
   * In Ubuntu 14.04, you need to log out of your desktop session (NOT just your terminal session) before a `chsh` to `zsh` will take effect. 
   * I recommend using the `vim-gnome` package for your vim, so that you don't have to go through the hassle of building vim with lua yourself.
+  * `fasd` should come included with oh-my-zsh but doesn't appear to. Manually isntall it. 
 
 
 Components
@@ -53,16 +63,6 @@ install`. This is so you can keep everything versioned in the repo.
 * The prompt is supplied by [Powerline][4] (I just use the default theme).
 
 * Aliases are defined in `aliases.symlink`.
-
-* I use iTerm2 rather than the native OSX terminal; it's more customizable:
-
-  - The colorscheme is Solarized, the same one used in Vim by spf13. See the
-    link for details on how to set it up for iTerm2.
-  - In order for the `zsh` prompt to render properly, you need to set up your
-    terminal to use a powerline-enabled font. Install one of the fonts from
-    [here](https://github.com/Lokaltog/powerline-fonts) and then set it as the
-    font in `iTerm2 > Preferences > Profiles > Text`.
-    There's a few special files in the hierarchy.
 
 ### Vim ###
 
