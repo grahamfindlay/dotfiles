@@ -70,13 +70,13 @@ __git_files () {
 }
 
 # Use powerline
-source "/usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh"
+source $HOME/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # Source every .zsh file in this repo
 for config_file ($DOTFILES/**/*.zsh) source $config_file
 
 # Use vi to edit command line
-# bindkey -v
+bindkey -v
 
 # Remove delay in entering command mode, as described by
 # http://zsh.sourceforge.net/Guide/zshguide04.html:

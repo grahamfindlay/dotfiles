@@ -20,6 +20,8 @@
   alias lsa='ls -AhG'
   # shortcut for vim
   alias v="vim"
+  # shortcut for atom
+  alias at="atom"
   # move file to trash
   alias t="trash-put"
   # safe rm
@@ -31,7 +33,8 @@
   alias cll='clear && ll'
   # move up one directory
   alias ..="cd .."
-
+  # VNC settings for when using the UW VPN
+  alias labvnc='x11vnc -display :0 -clip xinerama0  -noxdamage -passwd foo &'
 # }}}
 
 # Git {{{
@@ -175,4 +178,10 @@
 
 # }}}
 
+# MATLAB {{{
+
+# Old versions of MATLAB called the compiler executable "mex" instead of "matlab-mex". Help old software find the new compiler.
+
+alias mex="matlab-mex" 
+# }}}
 # vim:foldmethod=marker:foldmarker={{{,}}}:foldlevel=0:ft=sh

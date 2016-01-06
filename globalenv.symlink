@@ -4,6 +4,8 @@ export PATH=~/dotfiles/bin:$PATH:
 export PATH=$HOME/bin:$PATH
 # Add local binaries to path
 export PATH=$HOME/.local/bin:$PATH
+# Old versions of MATLAB called the compiler executable "mex" instead of "matlab-mex". Help old software find the new compiler.
+export PATH=$PATH:/usr/local/MATLAB/R2015a/bin/
 
 # Make Vim the default editor
 export EDITOR=vim
@@ -21,5 +23,6 @@ export CODE=$DEV/projects
 export DOTFILES=$HOME/dotfiles
 # Path to Matlab IIT code
 export IIT=$HOME/Dropbox/iit/code/iit
+
 
 # vim:foldmethod=marker:foldmarker={{{,}}}:foldlevel=0:ft=sh

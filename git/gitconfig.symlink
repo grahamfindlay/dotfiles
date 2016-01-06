@@ -38,10 +38,10 @@
   changed = yellow
   untracked = cyan
 [user]
-  name = Will Mayner
-  email = wmayner@gmail.com
+  name = Graham Findlay
+  email = graham.b.findlay@gmail.com
 [core]
-  excludesfile = /Users/will/.gitignore
+  excludesfile = /home/graham/.gitignore
   autocrlf = input
 [credential]
   helper = cache --timeout=10800
@@ -59,3 +59,7 @@
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
+[filter "lfs"]
+	smudge = git-lfs smudge %f
+	required = true
+	clean = git-lfs clean %f
