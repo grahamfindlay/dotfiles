@@ -688,6 +688,8 @@
 
 " Key (re)mappings {
 
+  inoremap fj <Esc>
+
   vnoremap \p :diffput<CR>
   vnoremap \o :diffget<CR>
 
