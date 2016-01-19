@@ -2,7 +2,7 @@
   name = Graham Findlay
   email = graham.b.findlay@gmail.com
 [credential]
-  helper = osxkeychain
+  helper = gnome-keyring
 [alias]
   # Log versions
   g = log --graph --pretty=oneline --abbrev-commit
