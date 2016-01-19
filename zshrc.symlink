@@ -116,6 +116,10 @@ source $ZSH/oh-my-zsh.sh
   setopt AUTO_CD
 # }}
 
+# GNU ls dircolors {{
+  eval `dircolors ~/.dir_colors/dircolors.ansi-dark`
+# }}
+
 # Aliases {{
   alias h="history"
   alias gs="git status --short"
