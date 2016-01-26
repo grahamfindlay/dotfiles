@@ -111,6 +111,11 @@ source $ZSH/oh-my-zsh.sh
   export KEYTIMEOUT=10
 # }}
 
+# VirtualEnvWrapper {{
+  source /usr/local/bin/virtualenvwrapper.sh
+  export WORKON_HOME=~/.virtualenvs
+# }}
+
 # Oh-My-Zsh # {{
   # removes need for explicit 'cd', ex: 'cd foo' becomes 'foo'
   setopt AUTO_CD
@@ -126,6 +131,7 @@ source $ZSH/oh-my-zsh.sh
   alias j='fasd_cd -d' # autojump-style cd
   # prettify ag output and highlight found matches
   alias ag='ag --color-line-number 34 --color-match 36 --color-path 32'
+  alias ll="ls -la"
 # }}  
 
 # Command Prompt {{
@@ -133,6 +139,7 @@ source $ZSH/oh-my-zsh.sh
   # For explanation, see:
   # http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/
   # http://dougblack.io/words/zsh-vi-mode.html
+  # http://zanshin.net/2012/08/01/my-zsh-setup-for-python-virtualenv/
   # The binding functions that they suggest are not necessary since we are not using a theme. Zsh will check here for these hooks all by itself. 
 #  RPROMPT='$(git_prompt_info)'
 #  ZSH_THEME_GIT_PROMPT_PREFIX="(%{$fg[red]%}"
@@ -142,14 +149,20 @@ source $ZSH/oh-my-zsh.sh
 
   ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[red]%}"
   function zle-line-init zle-keymap-select {
+      VENV=%{$fg[blue]%}$(virtualenv_info)%{$reset_color%}
       NORMAL_MODE=%{$fg[cyan]%}[N]%{$reset_color%}
       INSERT_MODE=%{$fg[green]%}[I]%{$reset_color%}
       CURR_DIR=%{$fg[white]%}%c%{$reset_color%}
-      PROMPT="${${KEYMAP/vicmd/$NORMAL_MODE}/(main|viins)/$INSERT_MODE} $CURR_DIR "
+      PROMPT="${VENV}${${KEYMAP/vicmd/$NORMAL_MODE}/(main|viins)/$INSERT_MODE} $CURR_DIR "
       zle reset-prompt
   }
   zle -N zle-line-init
   zle -N zle-keymap-select
+
+  function virtualenv_info { 
+      [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`')' 
+  }
+
 # }}
 
 # }}
