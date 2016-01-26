@@ -29,7 +29,7 @@
 " General {{
 
   " remap <Esc> to jj in case you're on a system where you can't quickly remap capslock  
-  inoremap jj <Esc>
+  inoremap fj <Esc>
   " automatically lead file if it has changed externally
   set autoread
   " avoid the extra shift keypress to enter cmdline mode
