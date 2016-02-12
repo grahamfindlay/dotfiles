@@ -7,7 +7,8 @@ The primary goal of these dotfiles is portability. That means a setup that "just
 Perform all steps in order: 
 
 1. Install Git
-2. Clone this repo.
+2. Clone this repo. Make sure to pull all submodules.
+  * `git clone --recurisve https://github.com/grahamfindlay/dotfiles.git`
 3. Install iTerm
   * You want a monospaced, sans font. Use Monaco by default. 
 4. Install Homebrew
