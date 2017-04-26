@@ -21,9 +21,11 @@ Perform all steps in order:
 # Optional extras
 Now, if you have time:
 
-1. Customize Terminal
+1. Install a version of vim that was compiled with the +clipboard option, so that you can copy-paste to the system clipboard. 
+  * `sudo apt-get install vim-gnome`
+2. Customize Terminal
   * Install Solarized Colors for Terminal. 
-2. Install GNOME Tweak Tool
+3. Install GNOME Tweak Tool
   * `sudo apt-get install gnome-tweak-tool`
   * Remaps Caps Lock to Ctrl
 4. Install Ag

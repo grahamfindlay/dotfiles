@@ -95,13 +95,15 @@
   " Gundo is a (g)raphical (undo) plugin for working with the tree.  
   " This key enters/exits gundo mode.  
   nnoremap <leader>u :GundoToggle<CR>
-  " Yank to the OS X clipload. Use to copy/paste from VIM to other apps. 
+  " Yank to the clipload. Use to copy/paste from VIM to other apps. 
+  " Note that the OSX/Windows have only 1 clipboard, while X11 systems 
+  " (e.g. Debian) have 2 (the * and + registers).
   " <leader>y yanks selected text, leader<yy> yanks line. 
-  noremap <leader>y "*y
-  noremap <leader>yy "*Y
+  noremap <leader>y "+y
+  noremap <leader>yy "+Y
   " Paste from OS X clipboard into vim, preserving text formatting
   " Notice how this command has 3 parts and part 3 undoes part 1.
-  noremap <leader>p :set paste<CR>:put *<CR>:set nopaste<CR>
+  noremap <leader>p :set paste<CR>:put +<CR>:set nopaste<CR>
 " }}
 
 " Lightline (status line plugin) {{

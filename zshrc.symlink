@@ -112,8 +112,8 @@ source $ZSH/oh-my-zsh.sh
 # }}
 
 # VirtualEnvWrapper {{
-  source /usr/local/bin/virtualenvwrapper.sh
   export WORKON_HOME=~/.virtualenvs
+  source /usr/local/bin/virtualenvwrapper.sh
 # }}
 
 # Oh-My-Zsh # {{
