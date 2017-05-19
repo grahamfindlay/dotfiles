@@ -24,11 +24,17 @@ Perform all steps in order:
   ```
   * Confirm success with: ``ls -la `which vim```. You should see it symlinked to the macvim Cellar. 
 8. Install dotfiles
- * The install script will give you the option to backup any files it tries to clobber.
-  ```
-  cd path/to/this/repo
-  rake install
-  ```
+  * You can use either the rakefile or the bash script `bootstrap` to symlink files. 
+    Both scripts will give you the option to backup any files they try to clobber 
+    ```
+    cd path/to/this/repo
+    rake install
+    ```
+    or
+    ```
+    cd path/to/this/repo
+    bash bootstrap
+    ```
 
 # Optional extras
 Now, if you have time:
