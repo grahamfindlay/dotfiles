@@ -1,11 +1,19 @@
+# Set LS_COLORS environment variable via dircolors command
+eval "$(dircolors ~/.dir_colors/dircolors.ansi-dark)"
+# Colorize ls output by default. This is automatic on some systems, but not on RHEL.
+alias ls='ls --color=auto'
+# Set other ls aliases
+alias lf="ls -l | grep -v '^d1;2c'" # just files
+alias l.='ls -d .* --color=auto'
+alias ll='ls -la'
+alias ldir="ls -l | grep '^d'" # just directories
+
+# Misc aliases
 alias clean='rm -rf ./*~; rm -rf ./*#; rm -rf ./*.orig'
 alias h='history'
-alias lf="ls -l | grep -v '^d1;2c'" # just files
-alias ldir="ls -l | grep '^d'" # just directories
 
 # Set prompt, ex: [~][master]$ your_command_here
 export PS1="[\W][\$(git branch 2>/dev/null | grep '^*' | colrm 1 2)]\$ " 
 
 # use vim keybindings
 set -o vi
-
