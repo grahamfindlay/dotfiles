@@ -1,6 +1,6 @@
 [user]
-  name = Graham Findlay
-  email = graham.b.findlay@gmail.com
+	name = Graham Findlay
+	email = graham.b.findlay@gmail.com
 [credential]
   helper = osxkeychain
 [alias]
@@ -41,5 +41,5 @@
 [push]
   default = simple
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore
   autocrlf = input
