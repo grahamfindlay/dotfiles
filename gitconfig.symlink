@@ -19,6 +19,8 @@
   s = status --short
   # Save a repo as a tarball
   export = archive -o latest.tar.gz -9 --prefix=latest/
+  # Remove whitespace clutter from diff
+  diff = diff -w
 [color]
   ui = true
 [color "branch"]
