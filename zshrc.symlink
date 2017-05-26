@@ -134,6 +134,10 @@ source $ZSH/oh-my-zsh.sh
   alias ll="ls -la"
 # }}  
 
+# Environment variables {{
+  export CHTC=gfindlay@submit-5.chtc.wisc.edu
+# }}
+
 # Command Prompt {{
   # Not placed in a theme file for easier setup on new systems.
   # For explanation, see:
