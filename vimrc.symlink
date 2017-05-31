@@ -34,6 +34,8 @@
   set autoread
   " avoid the extra shift keypress to enter cmdline mode
   noremap ; :
+  "load filetype-specific syntax-highlighting and indent files from .vim/indent
+  filetype plugin indent on
 " }}
 
 " Colors {{
@@ -55,7 +57,6 @@
   set showcmd " show last command in bottom bar
   set cursorline " highlight current line
   set cursorcolumn " highlight current column
-  filetype indent on "load filetype-specific indent files from .vim/indent
   set wildmenu " visual autocomplete for command menu
   set lazyredraw " don't redraw during macros
   set showmatch " highlight matching brackets
