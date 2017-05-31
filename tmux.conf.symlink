@@ -30,9 +30,8 @@
 
   # Status bar {{
 
-    # Let tmux apps use all colors, just like iTerm2 does 
-    # This is needed for our vim statusline to display properly in tmux
-    set -g default-terminal "screen-256color" 
+    # Force tmux to use 256 colors. This is needed for vim to display colors properly in tmux
+    set -g default-terminal "xterm-256color" 
 
     # default options for whole status bar
     set-option -g status-bg colour234
