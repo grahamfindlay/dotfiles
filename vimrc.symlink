@@ -56,11 +56,15 @@
   set number " show line number
   set showcmd " show last command in bottom bar
   set cursorline " highlight current line
-  set cursorcolumn " highlight current column
+  " The colorcolumn option is not supported in older versions of VIM.
+  " This check will avoid VIM throwing warnings in such cases.
+  if exists('+colorcolumn')
+    set cursorcolumn " highlight current column
+    set colorcolumn=80 " highlights column 80
+  endif
   set wildmenu " visual autocomplete for command menu
   set lazyredraw " don't redraw during macros
   set showmatch " highlight matching brackets
-  set colorcolumn=80 " highlights column 80
 " }}
 
 " Searching {{

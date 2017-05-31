@@ -12,11 +12,17 @@ Perform all steps in order:
 3. Install Oh-My-Zsh (*Optional, but highly encouraged*) 
   * `sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
 4. Install dotfiles
- * The install script will give you the option to backup any files it tries to clobber.
-  ```
-  cd path/to/this/repo
-  rake install
-  ```
+ * You can use either the rakefile or the bash script `bootstrap` to symlink files. 
+   Both scripts will give you the option to backup any files they try to clobber 
+    ```
+    cd path/to/this/repo
+    rake install
+    ```
+    or
+    ```
+    cd path/to/this/repo
+    bash bootstrap
+    ```
 
 # Optional extras
 Now, if you have time:
