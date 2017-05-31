@@ -9,6 +9,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export ZSH_CUSTOM=$HOME/.zsh_custom
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -58,7 +59,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(fasd git-prompt)
+plugins=(fasd git-prompt zsh-autosuggestions)
 
 # User configuration
 
@@ -136,6 +137,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Environment variables {{
   export CHTC=gfindlay@submit-5.chtc.wisc.edu
+  export TERM="xterm-256color" # Forces tmux to use 256 colors
 # }}
 
 # Command Prompt {{
@@ -167,6 +169,11 @@ source $ZSH/oh-my-zsh.sh
       [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`')' 
   }
 
+# }}
+
+# zsh-autosuggestions settings {{
+  # Make suggestions white.
+  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=7'
 # }}
 
 # }}
