@@ -28,7 +28,10 @@ Perform all steps in order:
 Now, if you have time:
 
 1. Install a version of vim that was compiled with the +clipboard option, so that you can copy-paste to the system clipboard. 
-  * `sudo apt-get install vim-gnome`
+  * `sudo apt-get install vim-gnome` if you're not installing YouCompleteMe. 
+    If installing YouCompleteMe, you probably have to build vim from source. 
+    Instructions [here](https://github.com/Valloric/YouCompleteMe). You may have 
+    to set --enable-gui to gnome2 rather than gtk2 on Debian distros.
 2. Customize Terminal
   * Install Solarized Colors for Terminal. 
 3. Install GNOME Tweak Tool
@@ -37,3 +40,13 @@ Now, if you have time:
 4. Install Ag
   * `sudo apt-get install silversearcher-ag`
   * If you have trouble installing Ag...
+5. Install [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
+  * Rather than using Vundle, you can use Pathogen. 
+  ```
+  cd ~/.vim/bundle
+  git clone https://github.com/Valloric/YouCompleteMe.git
+  cd YouCompleteMe
+  git submodule update --init --recursive
+  ./install.sh --clang-completer
+  ```  
+  Done!
