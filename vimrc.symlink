@@ -72,12 +72,9 @@
 " }}
 
 " Folding {{ 
-  set foldenable " enable folding
-  set foldlevelstart=10 "0: all fold closed, 99: all open
-  " set foldnestmax=10 you should never need this
+  set modeline " Use the modeline to determine fold type
   " space expands/collapses folds
   noremap <space> za
-  set foldmethod=indent " fold indented blocks 
 " }}
 
 " Movement {{ 
