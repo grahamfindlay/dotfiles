@@ -28,10 +28,7 @@ Perform all steps in order:
 Now, if you have time:
 
 1. Install a version of vim that was compiled with the +clipboard option, so that you can copy-paste to the system clipboard. 
-  * `sudo apt-get install vim-gnome` if you're not installing YouCompleteMe. 
-    If installing YouCompleteMe, you probably have to build vim from source. 
-    Instructions [here](https://github.com/Valloric/YouCompleteMe). You may have 
-    to set --enable-gui to gnome2 rather than gtk2 on Debian distros.
+  * `sudo apt-get install vim-gnome` if you're not installing YouCompleteMe or are using Debian 9. If installing YouCompleteMe on Debian 8, you probably have to build vim from source. Instructions [here](https://github.com/Valloric/YouCompleteMe). You may have to set --enable-gui to gnome2 rather than gtk2 when using Debian 8.
 2. Customize Terminal
   * Install Solarized Colors for Terminal. 
 3. Install GNOME Tweak Tool
