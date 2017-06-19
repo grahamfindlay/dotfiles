@@ -18,6 +18,8 @@
   bind-key C command-prompt -p "Name of new window: " "new-window -n '%%'"
   # Easier window deletion. Won't prompt for confirmation. 
   bind-key x kill-pane
+  # Using the mouse enters copy mode (leave copy mode using 'q'). 
+  set -g mode-mouse on
 # }}
 
 # UI {{
@@ -70,7 +72,7 @@
   # -t means this binding is applicable only when in normal mode 
   bind-key -t vi-copy 'v' begin-selection 
   bind-key -t vi-copy 'y' copy-selection 
-  # p pastes contents of buffer
+  # Ctrl+a, p pastes contents of buffer
   bind p paste-buffer 
   # Reduce delay before <Esc> takes effect
   set -sg escape-time 0
