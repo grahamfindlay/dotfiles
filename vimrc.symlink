@@ -67,7 +67,7 @@
   set showmatch " highlight matching brackets
 " }}
 
-" Searching {{
+" Searching buffer contents {{
   set ignorecase " ignore case when searching
   set incsearch " search as characters are entered
   set hlsearch " highlight search matches
@@ -108,6 +108,25 @@
   noremap <leader>p :set paste<CR>:put +<CR>:set nopaste<CR>
 " }}
 
+" CTRL-P (file/buffer searching/opening plugin) {{
+
+  let ctrlp_promt_mappings = {
+        \ 'AcceptSelection("e")': ['<c-t>'],
+        \ 'AcceptSelection("h")': ['<c-x>', '<c-cr>', '<c-s>'],
+        \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+        \ 'AcceptSelection("v")': ['<c-v>', '<RightMouse>'],
+        \ }
+  let g:ctrlp_show_hidden = 1
+
+  nnoremap <C-t> :CtrlP<CR>
+  nnoremap <C-p> :CtrlPMRU<CR>
+  nnoremap <C-b> :CtrlPBuffer<CR>
+
+  " Persistent caching across vim sessions
+  let g:ctrlp_clear_cache_on_exit = 0
+
+" }}
+
 " Lightline (status line plugin) {{
 set laststatus=2 " Lightline can only hook into vim when a buffer is split, so pretend that every buffer has been split. 
 " Customize status bar. Components are defined, then placed on the bar. 
@@ -138,16 +157,18 @@ let g:lightline = {
   let g:syntastic_check_on_open = 1
   " Don't bother checking for syntax errors on :wq 
   let g:syntastic_check_on_wq = 0
+" }}
 
+" Vim-Better-Whitespace (whitespace stripping plugin) {{
+  " Automatically strip all trailing whitespace on save for select filetypes.
+  autocmd FileType python autocmd BufEnter <buffer> EnableStripWhitespaceOnSave
 " }}
 
 " TODOS {{ 
-  " Investigate stripping trailing whitespace
-  " Investivate Ag https://github.com/rking/ag.vim.git
-  " Investigate CtrlP with or without Ag integration. 
+  " Investivate vim Ag https://github.com/rking/ag.vim.git
+  " Investigate CtrlP + Ag integration. 
   " Investigate how backup/swap files work, and avoiding them. 
   " Investigate shiftround and autoindent. 
   " Investigate scrollbind
-  " Investigate nerdtree-git-plugin
   " Investigate vim-gist
 " }}
