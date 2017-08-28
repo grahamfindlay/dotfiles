@@ -122,8 +122,6 @@ source $ZSH/oh-my-zsh.sh
   alias j='fasd_cd -d' # autojump-style cd
   # prettify ag output and highlight found matches
   alias ag='ag --color-line-number 34 --color-match 36 --color-path 32'
-  # ssh into lab comp
-  alias labssh='ssh graham@144.92.2.255'
 # }}  
 
 # Command Prompt {{
