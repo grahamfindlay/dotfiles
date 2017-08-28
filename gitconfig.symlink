@@ -1,8 +1,6 @@
 [user]
 	name = Graham Findlay
 	email = graham.b.findlay@gmail.com
-[credential]
-  helper = osxkeychain
 [alias]
   # Log versions
   g = log --graph --pretty=oneline --abbrev-commit
