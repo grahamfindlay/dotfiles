@@ -1,9 +1,6 @@
 [user]
   name = Graham Findlay
   email = graham.b.findlay@gmail.com
-[credential]
-  # one hour timeout. 
-  helper = cache --timeout=3600 
 [alias]
   # Log versions
   g = log --graph --pretty=oneline --abbrev-commit
