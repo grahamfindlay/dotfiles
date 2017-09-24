@@ -133,6 +133,7 @@ source $ZSH/oh-my-zsh.sh
   # prettify ag output and highlight found matches
   alias ag='ag --color-line-number 34 --color-match 36 --color-path 32'
   alias ll="ls -la --block-size=MB"
+  alias dumb='du --max-depth=1 --block-size=MB'
 # }}  
 
 # Environment variables {{
