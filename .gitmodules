@@ -25,6 +25,6 @@
 [submodule "vim.symlink/bundle/gundo.vim"]
 	path = vim.symlink/bundle/gundo.vim
 	url = https://github.com/sjl/gundo.vim.git
-[submodule "zsh_custom/plugins/zsh-autosuggestions"]
-	path = zsh_custom/plugins/zsh-autosuggestions
-	url = git://github.com/zsh-users/zsh-autosuggestions
+[submodule "zsh_custom.symlink/plugins/zsh-autosuggestions"]
+	path = zsh_custom.symlink/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
