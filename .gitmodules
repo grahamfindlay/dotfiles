@@ -16,9 +16,6 @@
 [submodule "vim.symlink/bundle/syntastic"]
 	path = vim.symlink/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
-[submodule "vim.symlink/bundle/nerdtree"]
-	path = vim.symlink/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
 [submodule "vim.symlink/bundle/lightline.vim"]
 	path = vim.symlink/bundle/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
