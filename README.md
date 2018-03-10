@@ -16,13 +16,11 @@ Perform all steps in order:
 5. Install Oh-My-Zsh (*Optional, but highly encouraged*) 
   * `sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
 6. Brew tmux
-7. Brew MacVim (mvim)
-  * Think twice about clobbering someone else's system vim! 
+7. Brew NeoVim
   ```
-  brew install macvim --with-override-system-vim
-  brew linkapps macvim
+  brew install neovim
+  ln -s ~/dotfiles/vimrc.symlink ~/.config/nvim/init.vim
   ```
-  * Confirm success with: ``ls -la `which vim```. You should see it symlinked to the macvim Cellar. 
 8. Install dotfiles
   * You can use either the rakefile or the bash script `bootstrap` to symlink files. 
     Both scripts will give you the option to backup any files they try to clobber 
